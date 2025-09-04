@@ -1,0 +1,12 @@
+
+
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+@import './custom.css';
+
+
+.hover-shadow:hover {
+  transform: translateY(-5px);
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
