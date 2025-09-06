@@ -134,11 +134,11 @@ const Dashboard = () => {
         <div className="row">
           {livresFiltres.length > 0 ? (
             livresFiltres.map(livre => (
-              <div key={livre.id} className="col-md-3 mb-4">
+              <div key={livre.id} className="col-md-4 mb-4">
                 <div className="card border-0 shadow-sm h-100 rounded-3 bg-light">
                   <div className="card-body d-flex flex-column">
                     <h5 className="card-title fw-bold">{livre.titre}</h5>
-                    <p className="card-text flex-grow-1">{livre.description || "Pas de description"}</p>
+                    <p className="card-text flex-grow-1">{livre.description || livre.titre}</p>
                     <p className="text-muted mb-1">
                       Parcours: {parcoursList.find(p => p.id === livre.parcours_id)?.nom || 'Inconnu'}
                     </p>
