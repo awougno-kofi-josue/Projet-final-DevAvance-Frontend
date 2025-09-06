@@ -1,4 +1,4 @@
-// Profile.jsx
+
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -12,7 +12,7 @@ const Profile = () => {
 
     useEffect(() => {
         if (!token) {
-        navigate("/login"); // si pas connecté → redirection
+        navigate("/login");
         return;
         }
 

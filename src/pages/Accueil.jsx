@@ -1,4 +1,4 @@
-// Accueil.jsx
+
 import React from "react";
 import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
@@ -27,12 +27,12 @@ const Accueil = () => {
 
             {/* Boutons */}
             <div className="d-flex justify-content-center gap-2 mb-3">
-              <button className="btn btn-dark fw-semibold">
+              <a className="btn btn-dark fw-semibold" href="/login">
                 → Se connecter pour continuer
-              </button>
-              <button className="btn btn-outline-dark fw-semibold">
+              </a>
+              <a className="btn btn-outline-dark fw-semibold" href="/document">
                 Parcourir les archives
-              </button>
+              </a>
             </div>
 
             {/* Note orange */}

@@ -8,7 +8,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [redirect, setRedirect] = useState(false);
-  const [error, setError] = useState(""); // ✅ gestion des erreurs
+  const [error, setError] = useState(""); 
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -39,10 +39,10 @@ const Register = () => {
       })
       .then((data) => {
         localStorage.setItem("token", data.token);
-        setRedirect(true); // ✅ redirection si succès
+        setRedirect(true); // 
       })
       .catch((error) => {
-        setError(error.message); // ✅ affichage erreur
+        setError(error.message);
       });
   };
 
@@ -58,7 +58,7 @@ const Register = () => {
       >
         <h2 className="card-title text-center mb-4">S'inscrire</h2>
 
-        {/* ✅ Message d'erreur */}
+        {/*  Message d'erreur */}
         {error && <div className="alert alert-danger text-center">{error}</div>}
 
         <form onSubmit={handleSubmit} method="post">

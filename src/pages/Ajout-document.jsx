@@ -44,7 +44,7 @@ const AjoutDocument = () => {
     formData.append("description", description);
     formData.append("parcours_id", parcours);
     formData.append("niveau_id", niveau);
-    formData.append("file", file);
+    formData.append("fichier", file);
 
     try {
       const response = await fetch("http://127.0.0.1:8000/api/documents", {
@@ -53,10 +53,14 @@ const AjoutDocument = () => {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
-        
       });
 
-      if (!response.ok) throw new Error("Erreur lors de l'ajout du document");
+      if (!response.ok) {
+  const errorText = await response.text();
+  console.error("Erreur API:", response.status, errorText);
+  setError(`Erreur API ${response.status}: ${errorText}`);
+  return;
+}
 
       setRedirect(true);
     } catch (err) {

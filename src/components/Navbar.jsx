@@ -26,7 +26,7 @@ const Navbar = () => {
         return res.json();
       })
       .then((data) => {
-        setUser(data); // Stocke les infos utilisateur
+        setUser(data); 
       })
       .catch(() => {
         setUser(null);
@@ -44,7 +44,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-light bg-white shadow-sm px-3">
       <div className="container-fluid d-flex justify-content-between align-items-center">
-        {/* Logo / Titre */}
+        
         <span className="navbar-brand fw-bold">Plateforme d'archives</span>
 
         {/* Boutons à droite */}

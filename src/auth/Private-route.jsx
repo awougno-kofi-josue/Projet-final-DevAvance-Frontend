@@ -2,20 +2,20 @@ import React, { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 
 const PrivateRoute = ({ children }) => {
-  const [isAuth, setIsAuth] = useState(null); // null = vérification en cours
+  const [isAuth, setIsAuth] = useState(null); 
 
   useEffect(() => {
     const token = localStorage.getItem("token");
 
     if (token) {
-      setIsAuth(true);  // token trouvé → utilisateur considéré comme authentifié
+      setIsAuth(true); 
     } else {
-      setIsAuth(false); // pas de token → non authentifié
+      setIsAuth(false); 
     }
   }, []);
 
   if (isAuth === null) {
-    // ⚡ Affichage pendant la vérification (ou animation)
+    
     return (
       <div className="text-center mt-5">
         <div className="spinner-border text-primary" role="status">
@@ -25,7 +25,6 @@ const PrivateRoute = ({ children }) => {
     );
   }
 
-  // Redirection si non authentifié, sinon rend l’enfant
   return isAuth ? children : <Navigate to="/login" replace />;
 };
 

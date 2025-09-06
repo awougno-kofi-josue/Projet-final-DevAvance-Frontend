@@ -5,12 +5,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(""); //  état pour gérer les erreurs
+  const [error, setError] = useState(""); 
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setError(""); // reset erreur avant chaque tentative
+    setError("");
 
     fetch("http://127.0.0.1:8000/api/login", {
       method: "POST",
